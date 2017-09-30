@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Social</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'simplesocial/CSS/master.css'%}">
+
+  </head>
+  <body>
+    <nav class='navbar mynav' role='navigation' id="navbar">
+      <div class="container">
+        <a class='navbar-brand mynav' href="{%url 'home'%}">Star Social</a>
+
+        <ul class='nav navbar-nav navbar-right'>
+          {% if user.is_authenticated %}
+            <li><a href="#">Post</a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Create Group</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="#">Groups</a></li>
+            <li><a href="{% url 'accounts:login'%}">Log In</a></li>
+            <li><a href="#% url 'accounts:signup'%">Sign Up</a></li>
+          {% endif%}
+        </ul>
+      </div>
+
+    </nav>
+    <div class="container mycontent">
+
+    {% block content %}
+
+    {% endblock %}
+
+    </div>
+  </body>
+</html>
