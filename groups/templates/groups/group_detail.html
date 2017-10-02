@@ -10,7 +10,8 @@
 
 
 				{% if user in group.members.all %}
-        <h2>You are a member</h2>
+					 <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
+
 				{% else %}
 					<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
 				{% endif %}
