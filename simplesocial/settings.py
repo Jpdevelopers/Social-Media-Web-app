@@ -143,4 +143,3 @@ LOGOUT_REDIRECT_URL = 'thanks'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '439128666221-e6st645tvsh3cec9drvaregvhucv0lve.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'zGPwLEJZ_ITLXNapuRLbod6k'
-
