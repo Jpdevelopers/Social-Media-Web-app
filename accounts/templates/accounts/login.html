@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
-
+{% load staticfiles %}
 {% block content %}
 <div class="container">
-  <h1>Log In</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    <input type="submit" class="btn btn-default" value="Login">
-  </form>
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" value="Login" class="btn btn-default">
+    </form>
 </div>
-{% endblock %}
+<p>
+</p>
+<div class="container">
+  <h1>Or</h1>
+    <p></p>
+      <a href='{% url 'social:begin' 'google-oauth2'%}'>
+        <button class="loginBtn loginBtn--google">
+          Login with Google <img id="google-btn" src="https://developers.google.com/identity/images/g-logo.png">
+        </button>
+      </a>
+  
+  {% endblock %}
